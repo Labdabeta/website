@@ -28,7 +28,7 @@ let server = http.createServer(function (req, res) {
         fs.readFile('./static/html404.html', function (err, data) {
             if (err) {
                 res.write("<p><b>404 - page not found. </b></p>" + 
-                        "<p><b>Also 404 page not found. Ok I wont lie, this is bad!</b></p>",
+                        "<p><b>Also 404 error page not found. Ok I wont lie, this is bad!</b></p>",
                         function (err) { res.end(); });
             } else {
                 res.write(data, function (err) { res.end(); });
