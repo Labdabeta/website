@@ -24,7 +24,15 @@ let server = http.createServer(function (req, res) {
   } else {
     fs.readFile('./static' + url, function (err, data) {
       if (err) {
-        res.writeHead(404);
+        res.writeHead(404, {"Content-Type": "text/html");
+        fs.readFile('./static/html', function (err, data) {
+            if (err) {
+                res.write("<p><b>404 - page not found. </b></p>" + 
+                        "<p><b>Also 404 page not found. Ok I wont lie, this is bad!</b></p>");
+            } else {
+                res.write(data);
+            }
+        });
         res.end();
       } else {
         let ext = path.extname(url).slice(1);
