@@ -104,7 +104,7 @@ textarea {
     src: url("labprogramming.ttf")
 }
 
-#menubar {
+#topbar {
     position:fixed;
     top:5px;
     left:0px;
@@ -112,23 +112,44 @@ textarea {
     height:10px;
 }
 
+#botbar {
+    position:fixed;
+    bottom:50px; /* Changed later in js */
+    left:0px;
+    width:100%;
+    height:10px;
+}
+
+
 #menuskip {
     height:45px;
 }
 
-#menubar ul {
+.menubar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #333;
+    background-color: #000;
     overflow: hidden;
 }
 
-#menubar ul li {
+.menubar ul .item {
     float: left;
 }
 
-#menubar ul li a {
+.menubar ul .option {
+    float: right;
+}
+
+.menubar ul li b {
+    display: block;
+    color: #eee;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menubar ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -136,13 +157,13 @@ textarea {
     text-decoration: none;
 }
 
-#menubar ul li a:hover {
-    background-color: #111;
+.menubar ul li a:hover {
+    background-color: #222;
 }
 
 #monocle-container {
-    width: 500px;
-    height: 500px;
+    width: 80vmin;
+    height: 80vmin;
 
     position: fixed;
     top: 50%;
@@ -156,15 +177,15 @@ textarea {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border: 10px solid black;
-    width: 50px;
-    height: 50px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px; 
-    border-radius: 25px;
+    width: 10%;
+    height: 10%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;
 
     position: fixed;
-    top: 427px; /* 250 + 250/rt(2) */
-    left: 427px;
+    top: 87%; /* 50+50/rt(2) + a bit further for looks*/
+    left: 87%;
     transform: translate(-50%, -50%);
 }
 
@@ -174,19 +195,19 @@ textarea {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border: 30px solid black;
-    width: 500px;
-    height: 500px;
-    line-height: 500px;
-    -moz-border-radius: 250px;
-    -webkit-border-radius: 250px; 
-    border-radius: 250px;
+    width: 100%;
+    height: 100%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;
 
     position: fixed;
-    top: 250px;
-    left: 250px;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 
     text-align: center;
+    line-height: 100%;
 }
 
 #monocle span {
@@ -194,7 +215,10 @@ textarea {
     vertical-align: middle;
     line-height: normal;
 
-    transform: translateY(-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
     font-size: 64px;
 }

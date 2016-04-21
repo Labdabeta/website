@@ -5,10 +5,23 @@ const http         = require('http'),
       sysInfo      = require('./utils/sys-info'),
       env          = process.env;
 
+function err404(res, code) {
+    res.writeHead(404, {"Content-Type": "text/html"});
+    fs.readFile('./static/'+code+'/html404.html', function (err, data) {
+        if (err) {
+            res.write("<p><b>404 - page not found. </b></p>" + 
+                    "<p><b>Also 404 error page not found. Ok I wont lie, this is bad!</b></p>",
+                    function (err) { res.end(); });
+        } else {
+            res.write(data, function (err) { res.end(); });
+        }
+    });
+}
+
 let server = http.createServer(function (req, res) {
   let url = req.url;
   if (url == '/') {
-    url += 'index.html';
+    url += 'en/index.html';
   }
 
   // IMPORTANT: Your application HAS to respond to GET /health with status 200
@@ -24,16 +37,9 @@ let server = http.createServer(function (req, res) {
   } else {
     fs.readFile('./static' + url, function (err, data) {
       if (err) {
-        res.writeHead(404, {"Content-Type": "text/html"});
-        fs.readFile('./static/html404.html', function (err, data) {
-            if (err) {
-                res.write("<p><b>404 - page not found. </b></p>" + 
-                        "<p><b>Also 404 error page not found. Ok I wont lie, this is bad!</b></p>",
-                        function (err) { res.end(); });
-            } else {
-                res.write(data, function (err) { res.end(); });
-            }
-        });
+        if (url.startsWith('/fr')) { err404(res,'fr'); }
+        else if (url.startsWith('/eo')) { err404(res,'eo'); }
+        else { err404(res,'en'); }
       } else {
         let ext = path.extname(url).slice(1);
         res.setHeader('Content-Type', contentTypes[ext]);
