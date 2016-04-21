@@ -1,121 +1,123 @@
 #technologies {
+    margin: 50px 0px 0px 0px;
     position: relative;
 }
 
 #technologies div img {
     height: 100%;
     width: 100%;
+    padding: 1vw;
 }
 
 #c {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
+    width: 30vw;
+    height: 30vw;
     top: 0;
     left: 0;
 }
 
 #cpp {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
+    width: 30vw;
+    height: 30vw;
     top: 0;
-    left: 30vmin;
+    left: 30vw;
 }
 
 #java {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
+    width: 30vw;
+    height: 30vw;
     top: 0;
-    left: 60vmin;
+    left: 60vw;
 }
 
 #vim {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 30vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 30vw;
     left: 0;
 }
 
 #git {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 30vmin;
-    left: 30vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 30vw;
+    left: 30vw;
 }
 
 #bash {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 30vmin;
-    left: 60vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 30vw;
+    left: 60vw;
 }
 
 #htmljscss {
     position: absolute;
-    width: 90vmin;
-    height: 30vmin;
-    top: 60vmin;
+    width: 90vw;
+    height: 30vw;
+    top: 60vw;
     left: 0;
 }
 
 #nodejs {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 90vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 90vw;
     left: 0;
 }
 
 #python {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 90vmin;
-    left: 30vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 90vw;
+    left: 30vw;
 }
 
 #android {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 90vmin;
-    left: 60vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 90vw;
+    left: 60vw;
 }
 
 #net {
     position: absolute;
-    width: 90vmin;
-    height: 30vmin;
-    top: 120vmin;
-    left: 0vmin;
+    width: 90vw;
+    height: 30vw;
+    top: 120vw;
+    left: 0vw;
 }
 
 #haskell {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 150vmin;
-    left: 0vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 150vw;
+    left: 0vw;
 }
 
 #asm {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 150vmin;
-    left: 30vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 150vw;
+    left: 30vw;
 }
 
 #eclipse {
     position: absolute;
-    width: 30vmin;
-    height: 30vmin;
-    top: 150vmin;
-    left: 60vmin;
+    width: 30vw;
+    height: 30vw;
+    top: 150vw;
+    left: 60vw;
 }
 
