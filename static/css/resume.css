@@ -1,0 +1,116 @@
+#technologies {
+    width: 90vmin;
+}
+
+#c {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 0;
+    left: 0;
+}
+
+#cpp {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 0;
+    left: 30vmin;
+}
+
+#java {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 0;
+    left: 60vmin;
+}
+
+#vim {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 30vmin;
+    left: 0;
+}
+
+#git {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 30vmin;
+    left: 30vmin;
+}
+
+#bash {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 30vmin;
+    left: 60vmin;
+}
+
+#htmljscss {
+    position: absolute;
+    width: 90vmin;
+    height: 30vmin;
+    top: 60vmin;
+    left: 0;
+}
+
+#nodejs {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 90vmin;
+    left: 0;
+}
+
+#python {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 90vmin;
+    left: 30vmin;
+}
+
+#android {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 90vmin;
+    left: 60vmin;
+}
+
+#net {
+    position: absolute;
+    width: 90vmin;
+    height: 30vmin;
+    top: 120vmin;
+    left: 0vmin;
+}
+
+#haskell {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 150vmin;
+    left: 0vmin;
+}
+
+#asm {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 150vmin;
+    left: 30vmin;
+}
+
+#eclipse {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    top: 150vmin;
+    left: 60vmin;
+}
+
