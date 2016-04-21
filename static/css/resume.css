@@ -10,7 +10,7 @@
 }
 
 #c {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 0;
@@ -18,7 +18,7 @@
 }
 
 #cpp {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 0;
@@ -26,7 +26,7 @@
 }
 
 #java {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 0;
@@ -34,7 +34,7 @@
 }
 
 #vim {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 30vmin;
@@ -42,7 +42,7 @@
 }
 
 #git {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 30vmin;
@@ -50,7 +50,7 @@
 }
 
 #bash {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 30vmin;
@@ -58,7 +58,7 @@
 }
 
 #htmljscss {
-    position: absolute;
+    position: relative;
     width: 90vmin;
     height: 30vmin;
     top: 60vmin;
@@ -66,7 +66,7 @@
 }
 
 #nodejs {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 90vmin;
@@ -74,7 +74,7 @@
 }
 
 #python {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 90vmin;
@@ -82,7 +82,7 @@
 }
 
 #android {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 90vmin;
@@ -90,7 +90,7 @@
 }
 
 #net {
-    position: absolute;
+    position: relative;
     width: 90vmin;
     height: 30vmin;
     top: 120vmin;
@@ -98,7 +98,7 @@
 }
 
 #haskell {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 150vmin;
@@ -106,7 +106,7 @@
 }
 
 #asm {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 150vmin;
@@ -114,7 +114,7 @@
 }
 
 #eclipse {
-    position: absolute;
+    position: relative;
     width: 30vmin;
     height: 30vmin;
     top: 150vmin;
