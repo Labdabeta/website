@@ -1,7 +1,5 @@
 #technologies {
-    padding: 5vmin;
-    width: 90vmin;
-    height: 180vmin;
+    position: relative;
 }
 
 #technologies div img {
@@ -10,7 +8,7 @@
 }
 
 #c {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 0;
@@ -18,7 +16,7 @@
 }
 
 #cpp {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 0;
@@ -26,7 +24,7 @@
 }
 
 #java {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 0;
@@ -34,7 +32,7 @@
 }
 
 #vim {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 30vmin;
@@ -42,7 +40,7 @@
 }
 
 #git {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 30vmin;
@@ -50,7 +48,7 @@
 }
 
 #bash {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 30vmin;
@@ -58,7 +56,7 @@
 }
 
 #htmljscss {
-    position: relative;
+    position: absolute;
     width: 90vmin;
     height: 30vmin;
     top: 60vmin;
@@ -66,7 +64,7 @@
 }
 
 #nodejs {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 90vmin;
@@ -74,7 +72,7 @@
 }
 
 #python {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 90vmin;
@@ -82,7 +80,7 @@
 }
 
 #android {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 90vmin;
@@ -90,7 +88,7 @@
 }
 
 #net {
-    position: relative;
+    position: absolute;
     width: 90vmin;
     height: 30vmin;
     top: 120vmin;
@@ -98,7 +96,7 @@
 }
 
 #haskell {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 150vmin;
@@ -106,7 +104,7 @@
 }
 
 #asm {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 150vmin;
@@ -114,7 +112,7 @@
 }
 
 #eclipse {
-    position: relative;
+    position: absolute;
     width: 30vmin;
     height: 30vmin;
     top: 150vmin;
