@@ -41,12 +41,8 @@ let server = http.createServer(function (req, res) {
         else if (url.startsWith('/eo')) { err404(res,'eo'); }
         else { err404(res,'en'); }
       } else {
-        if (url.endsWith('.js')) {
-            res.setHeader('Content-Type', 'text/javascript');
-        } else {
-            let ext = path.extname(url).slice(1);
-            res.setHeader('Content-Type', contentTypes[ext]);
-        }
+        let ext = path.extname(url).slice(1);
+        res.setHeader('Content-Type', contentTypes[ext]);
         if (ext === 'html') {
           res.setHeader('Cache-Control', 'no-cache, no-store');
         }
