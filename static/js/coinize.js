@@ -17,7 +17,7 @@ function coinize(id,toptext,toptheta,bottext,bottheta,rad) {
 
     var topchars = $("."+id+"top");
     topchars.css("height",rad+"px"); //make it tall, like a spoke
-    topchars.css("position","relative"); //force it where it should be
+    topchars.css("position","absolute"); //force it where it should be
     topchars.css("left",rad+"px"); //move it to the center
     topchars.css("top","0");
     topchars.css("transform-origin","bottom left"); //bottom left is now in center of coin
@@ -36,7 +36,7 @@ function coinize(id,toptext,toptheta,bottext,bottheta,rad) {
 
     var botchars = $("."+id+"bot");
     botchars.css("height",rad+"px"); //make it tall, like a spoke
-    botchars.css("position","relative"); //force it where it should be
+    botchars.css("position","absolute"); //force it where it should be
     botchars.css("left",rad+"px"); //move it to the center
     botchars.css("top","0");
     botchars.css("transform-origin","bottom left"); //bottom left is now in center of coin
