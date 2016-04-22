@@ -1,123 +1,24 @@
 #technologies {
     margin: 50px 0px 0px 0px;
     position: relative;
-}
-
-#technologies div img {
-    height: 100%;
-    width: 100%;
-    padding: 1vw;
+    width: 900px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #c {
     position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 0;
-    left: 0;
+    left: 100px;
+    top: 100px;
+    background-image: url("c.png");
 }
 
-#cpp {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 0;
-    left: 30vw;
+.ctop {
+    font: 12px Monaco, MonoSpace;
+    color: black;
 }
 
-#java {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 0;
-    left: 60vw;
+.cbot {
+    font: 12px Monaco, MonoSpace;
+    color: black;
 }
-
-#vim {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 30vw;
-    left: 0;
-}
-
-#git {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 30vw;
-    left: 30vw;
-}
-
-#bash {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 30vw;
-    left: 60vw;
-}
-
-#htmljscss {
-    position: absolute;
-    width: 90vw;
-    height: 30vw;
-    top: 60vw;
-    left: 0;
-}
-
-#nodejs {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 90vw;
-    left: 0;
-}
-
-#python {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 90vw;
-    left: 30vw;
-}
-
-#android {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 90vw;
-    left: 60vw;
-}
-
-#net {
-    position: absolute;
-    width: 90vw;
-    height: 30vw;
-    top: 120vw;
-    left: 0vw;
-}
-
-#haskell {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 150vw;
-    left: 0vw;
-}
-
-#asm {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 150vw;
-    left: 30vw;
-}
-
-#eclipse {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    top: 150vw;
-    left: 60vw;
-}
-
