@@ -1,8 +1,17 @@
-#summary {
+#abilities {
     float: left;
+    width: 30%;
+    margin: 10% 2.5%;
 }
 
 #computerskills {
-    float: right;
+    float: left;
+    width: 30%;
+    margin: 10% 2.5%;
 }
-/* TODO: make a 3rd column, somehow */
+
+#employment {
+    float: left;
+    width: 30%;
+    margin: 10% 2.5%;
+}
