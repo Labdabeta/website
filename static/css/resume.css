@@ -10,126 +10,126 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    background-image: url("c.png");
+    background-image: url("/img/c.png");
 }
 
 #cpp {
     position: absolute;
     left: 110px;
     top: 0px;
-    background-image: url("cpp.png");
+    background-image: url("/img/cpp.png");
 }
 
 #java {
     position: absolute;
     left: 220px;
     top: 0px;
-    background-image: url("java.png");
+    background-image: url("/img/java.png");
 }
 
 #net {
     position: absolute;
     left: -110px;
     top: 0px;
-    background-image: url("net.png");
+    background-image: url("/img/net.png");
 }
 
 #sql {
     position: absolute;
     left: -220px;
     top: 0px;
-    background-image: url("sql.png");
+    background-image: url("/img/sql.png");
 }
 
 #html {
     position: absolute;
     left: 55px;
     top: 95px;
-    background-image: url("html.png");
+    background-image: url("/img/html.png");
 }
 
 #js {
     position: absolute;
     left: 165px;
     top: 95px;
-    background-image: url("js.png");
+    background-image: url("/img/js.png");
 }
 
 #css {
     position: absolute;
     left: -55px;
     top: 95px;
-    background-image: url("css.png");
+    background-image: url("/img/css.png");
 }
 
 #nodejs {
     position: absolute;
     left: -165px;
     top: 95px;
-    background-image: url("nodejs.png");
+    background-image: url("/img/nodejs.png");
 }
 
 #python {
     position: absolute;
     left: 0px;
     top: 190px;
-    background-image: url("python.png");
+    background-image: url("/img/python.png");
 }
 
 #haskell {
     position: absolute;
     left: 110px;
     top: 190px;
-    background-image: url("haskell.png");
+    background-image: url("/img/haskell.png");
 }
 
 #android {
     position: absolute;
     left: 220px;
     top: 190px;
-    background-image: url("android.png");
+    background-image: url("/img/android.png");
 }
 
 #ada {
     position: absolute;
     left: -110px;
     top: 190px;
-    background-image: url("ada.png");
+    background-image: url("/img/ada.png");
 }
 
 #asm {
     position: absolute;
     left: -220px;
     top: 190px;
-    background-image: url("asm.png");
+    background-image: url("/img/asm.png");
 }
 
 #vim {
     position: absolute;
     left: 55px;
     top: 285px;
-    background-image: url("vim.png");
+    background-image: url("/img/vim.png");
 }
 
 #git {
     position: absolute;
     left: 165px;
     top: 285px;
-    background-image: url("git.png");
+    background-image: url("/img/git.png");
 }
 
 #gnu {
     position: absolute;
     left: -55px;
     top: 285px;
-    background-image: url("gnu.png");
+    background-image: url("/img/gnu.png");
 }
 
 #tex {
     position: absolute;
     left: -165px;
     top: 285px;
-    background-image: url("tex.png");
+    background-image: url("/img/tex.png");
 }
 
 
