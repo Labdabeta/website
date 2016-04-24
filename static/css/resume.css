@@ -2,7 +2,15 @@
     margin: 50px 0px 0px 0px;
     position: relative;
     width: 0px;
+    top: 30px;
     left: 50%;
+    transform: translateX(-50%);
+}
+
+#languages h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     transform: translateX(-50%);
 }
 
@@ -10,6 +18,7 @@
     position: absolute;
     left: 0px;
     top: 0px;
+    transform: translateX(-50%);
     background-image: url("/img/c.png");
 }
 
@@ -17,6 +26,7 @@
     position: absolute;
     left: 110px;
     top: 0px;
+    transform: translateX(-50%);
     background-image: url("/img/cpp.png");
 }
 
@@ -24,6 +34,7 @@
     position: absolute;
     left: 220px;
     top: 0px;
+    transform: translateX(-50%);
     background-image: url("/img/java.png");
 }
 
@@ -31,6 +42,7 @@
     position: absolute;
     left: -110px;
     top: 0px;
+    transform: translateX(-50%);
     background-image: url("/img/net.png");
 }
 
@@ -38,6 +50,7 @@
     position: absolute;
     left: -220px;
     top: 0px;
+    transform: translateX(-50%);
     background-image: url("/img/sql.png");
 }
 
@@ -45,6 +58,7 @@
     position: absolute;
     left: 55px;
     top: 95px;
+    transform: translateX(-50%);
     background-image: url("/img/html.png");
 }
 
@@ -52,6 +66,7 @@
     position: absolute;
     left: 165px;
     top: 95px;
+    transform: translateX(-50%);
     background-image: url("/img/js.png");
 }
 
@@ -59,6 +74,7 @@
     position: absolute;
     left: -55px;
     top: 95px;
+    transform: translateX(-50%);
     background-image: url("/img/css.png");
 }
 
@@ -66,6 +82,7 @@
     position: absolute;
     left: -165px;
     top: 95px;
+    transform: translateX(-50%);
     background-image: url("/img/nodejs.png");
 }
 
@@ -73,6 +90,7 @@
     position: absolute;
     left: 0px;
     top: 190px;
+    transform: translateX(-50%);
     background-image: url("/img/python.png");
 }
 
@@ -80,6 +98,7 @@
     position: absolute;
     left: 110px;
     top: 190px;
+    transform: translateX(-50%);
     background-image: url("/img/haskell.png");
 }
 
@@ -87,6 +106,7 @@
     position: absolute;
     left: 220px;
     top: 190px;
+    transform: translateX(-50%);
     background-image: url("/img/android.png");
 }
 
@@ -94,6 +114,7 @@
     position: absolute;
     left: -110px;
     top: 190px;
+    transform: translateX(-50%);
     background-image: url("/img/ada.png");
 }
 
@@ -101,6 +122,7 @@
     position: absolute;
     left: -220px;
     top: 190px;
+    transform: translateX(-50%);
     background-image: url("/img/asm.png");
 }
 
@@ -108,6 +130,7 @@
     position: absolute;
     left: 55px;
     top: 285px;
+    transform: translateX(-50%);
     background-image: url("/img/vim.png");
 }
 
@@ -115,6 +138,7 @@
     position: absolute;
     left: 165px;
     top: 285px;
+    transform: translateX(-50%);
     background-image: url("/img/git.png");
 }
 
@@ -122,6 +146,7 @@
     position: absolute;
     left: -55px;
     top: 285px;
+    transform: translateX(-50%);
     background-image: url("/img/gnu.png");
 }
 
@@ -129,6 +154,7 @@
     position: absolute;
     left: -165px;
     top: 285px;
+    transform: translateX(-50%);
     background-image: url("/img/tex.png");
 }
 
