@@ -1,3 +1,8 @@
+@font-face {
+    font-family: CoinGaramond;
+    src: url("/ttf/GaramondNo8-Regular.ttf");
+}
+
 #languages {
     margin: 50px 0px 0px 0px;
     position: relative;
@@ -160,164 +165,164 @@
 
 
 .ctop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .cbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .cpptop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .cppbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .javatop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .javabot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .nettop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .netbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .sqltop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .sqlbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .htmltop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .htmlbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .jstop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .jsbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .csstop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .cssbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .nodejstop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .nodejsbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .pythontop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .pythonbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .haskelltop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .haskellbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .androidtop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .androidbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .adatop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .adabot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .asmtop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .asmbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .vimtop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .vimbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .gittop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .gitbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .gnutop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .gnubot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
 .textop {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 .texbot {
-    font: 6px Monaco, MonoSpace;
+    font: 6px CoinGaramond, MonoSpace;
     color: black;
 }
 
