@@ -176,8 +176,8 @@ textarea {
     border-radius: 50%;
 
     position: fixed;
-    top: 87%; /* 50+50/rt(2) + a bit further for looks*/
-    left: 87%;
+    top: 88%; /* 50+50/rt(2) + a bit further for looks*/
+    left: 88%;
     transform: translate(-50%, -50%);
 }
 
