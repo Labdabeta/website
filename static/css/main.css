@@ -320,18 +320,18 @@ textarea {
        font-size: 64px;
     } 
     /* width classes in twelths (for non-mobile) */
-    .w1 { width: 8.33%; }
-    .w2 { width: 16.66%; }
-    .w3 { width: 25%; }
-    .w4 { width: 33.33%; }
-    .w5 { width: 41.66%; }
-    .w6 { width: 50%; }
-    .w7 { width: 58.33%; }
-    .w8 { width: 66.66%; }
-    .w9 { width: 75%; }
-    .w10 { width: 83.33%; }
-    .w11 { width: 91.66%; }
-    .w12 { width: 100%; }
+    .w1 { width: 8.33%; float: left; }
+    .w2 { width: 16.66%; float: left; }
+    .w3 { width: 25%; float: left; }
+    .w4 { width: 33.33%; float: left; }
+    .w5 { width: 41.66%; float: left; }
+    .w6 { width: 50%; float: left; }
+    .w7 { width: 58.33%; float: left; }
+    .w8 { width: 66.66%; float: left; }
+    .w9 { width: 75%; float: left; }
+    .w10 { width: 83.33%; float: left; }
+    .w11 { width: 91.66%; float: left; }
+    .w12 { width: 100%; float: left; }
 }
 
 @media print,
