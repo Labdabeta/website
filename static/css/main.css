@@ -109,7 +109,6 @@ textarea {
     bottom:0px; /* Changed later in js */
     left:0px;
     width:100%;
-    transform: translateY(-50%);
 }
 
 
