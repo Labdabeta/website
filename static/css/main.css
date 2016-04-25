@@ -25,12 +25,12 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #b3b3b3;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #b3b3b3;
     text-shadow: none;
 }
 
@@ -92,17 +92,8 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Author's custom styles (mobile first)
    ========================================================================== */
-
-@font-face {
-    font-family:"LABProgramming";
-    src: url("labprogramming.eot")
-}
-@font-face {
-    font-family:"LABProgramming";
-    src: url("labprogramming.ttf")
-}
 
 #topbar {
     position:fixed;
@@ -146,7 +137,7 @@ textarea {
     display: block;
     color: #eee;
     text-align: center;
-    padding: 14px 16px;
+    padding: 7px 8px; /* 14px 16px */
     text-decoration: none;
 }
 
@@ -154,7 +145,7 @@ textarea {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 7px 8px; /* 14px 16px */
     text-decoration: none;
 }
 
@@ -163,8 +154,8 @@ textarea {
 }
 
 #monocle-container {
-    width: 80vmin;
-    height: 80vmin;
+    width: 70vmin;
+    height: 70vmin;
 
     position: fixed;
     top: 50%;
@@ -195,7 +186,7 @@ textarea {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    border: 30px solid black;
+    border: 10px solid black;
     width: 100%;
     height: 100%;
     -moz-border-radius: 50%;
@@ -221,19 +212,22 @@ textarea {
     left: 50%;
     transform: translate(-50%,-50%);
 
-    font-size: 64px;
+    font-size: 32px; /* 64 */
 }
 
-
-
-
-
-
-
-
-
-
-
+/* width classes in twelths (mobile first! [renders vertically]) */
+.w1 { width: 100%; }
+.w2 { width: 100%; }
+.w3 { width: 100%; }
+.w4 { width: 100%; }
+.w5 { width: 100%; }
+.w6 { width: 100%; }
+.w7 { width: 100%; }
+.w8 { width: 100%; }
+.w9 { width: 100%; }
+.w10 { width: 100%; }
+.w11 { width: 100%; }
+.w12 { width: 100%; }
 
 /* ==========================================================================
    Helper classes
@@ -310,13 +304,34 @@ textarea {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+    Media rewrites
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+    .menubar ul li b {
+        padding: 14px 16px;
+    }
+
+    .menubar ul li a {
+        padding: 14px 16px;
+    }
+    
+    #monocle span {
+       font-size: 64px;
+    } 
+    /* width classes in twelths (for non-mobile) */
+    .w1 { width: 8.33%; }
+    .w2 { width: 16.66%; }
+    .w3 { width: 25%; }
+    .w4 { width: 33.33%; }
+    .w5 { width: 41.66%; }
+    .w6 { width: 50%; }
+    .w7 { width: 58.33%; }
+    .w8 { width: 66.66%; }
+    .w9 { width: 75%; }
+    .w10 { width: 83.33%; }
+    .w11 { width: 91.66%; }
+    .w12 { width: 100%; }
 }
 
 @media print,
@@ -333,6 +348,10 @@ textarea {
    ========================================================================== */
 
 @media print {
+    .menubar * {
+        display: none !important; /* don't draw the bars on print. */
+    }
+
     *,
     *:before,
     *:after,
