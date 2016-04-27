@@ -1,0 +1,26 @@
+{
+    "Dictionary" : [
+        {   "word" : "AD",
+            "noun" : "to -",
+            "verb" : "go"},
+        {   "word" : "PARG",
+            "noun" : "-",
+            "verb" : "stop"}
+    ],
+
+    "Conjugators" : [
+        {   "word" : "ER",
+            "does" : "Change to past tense."},
+        {   "word" : "EN",
+            "does" : "Change to future tense."}
+    ],
+
+    "Meaningful Morphologies" : [
+        {   "fix"   : "OLE",
+            "where" : "suffix",
+            "means" : "location" },
+        {   "fix"   : "ULA",
+            "where" : "suffix",
+            "means" : "plural" }
+    ]
+}

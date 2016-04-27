@@ -1,0 +1,8 @@
+@font-face {
+    font-family: LoopLang;
+    src: url("/ttf/LoopFont.ttf");
+}
+.llsample {
+    font-family: LoopLang;
+}
+    

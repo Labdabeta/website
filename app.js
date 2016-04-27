@@ -55,4 +55,6 @@ let server = http.createServer(function (req, res) {
 server.listen(env.NODE_PORT || 3000, env.NODE_IP || 'localhost', function () {
   console.log(`Application worker ${process.pid} started...`);
 });
-//server.listen(8080); //for testing purposes
+if (process.argv.indexOf("DEBUG_MODE")>-1) {
+    server.listen(8080); //for testing purposes
+}
