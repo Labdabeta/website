@@ -1,24 +1,6 @@
-/*#container {
-    position: absolute;
-    left: 50%;
-    transform:translateX(-50%);
-    width: 90%;
+#container div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
 }
-
-#abilities {
-    float: left;
-    width: 30%;
-    /*margin: 1% 2%;
-}
-
-#computerskills {
-    float: left;
-    width: 30%;
-    /*margin: 1% 2%;
-}
-
-#employment {
-    float: left;
-    width: 30%;
-    /*margin: 1% 2%;
-}*/
