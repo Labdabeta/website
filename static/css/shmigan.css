@@ -1,0 +1,10 @@
+@font-face {
+    font-family: Shmigan;
+    src: url("/ttf/Shmigan.ttf");
+}
+.shmigan {
+    font-family: Shmigan;
+    font-size: 28pt;
+}
+
+    
