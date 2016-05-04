@@ -1,5 +1,6 @@
 // The shmigan syllabary, maps syllables to symbols in shmigan.
 var SYLLABARY = [];
+SYLLABARY[ "" ] = "";
 SYLLABARY[ "t" ] = "/^";
 SYLLABARY[ "d" ] = "\\^";
 SYLLABARY[ "m" ] = "\\/^";
@@ -13,7 +14,7 @@ SYLLABARY[ "f" ] = "/~";
 SYLLABARY[ "v" ] = "\\~";
 SYLLABARY[ "l" ] = "\\/~";
 SYLLABARY[ "th" ] = ")/~";
-SYLLABARY[ "th*" ] = "(\\~";
+SYLLABARY[ "ch" ] = "(\\~";
 SYLLABARY[ "r" ] = "()\\/~";
 SYLLABARY[ "sh" ] = "]/~";
 SYLLABARY[ "zh" ] = "[\\~";
@@ -53,6 +54,10 @@ PUNCT[ "(" ] = "<\\*";
 PUNCT[ ")" ] = ">/*";
 PUNCT[ "!" ] = "><\\/*";
 
+function syllOf(text) {
+    if (SYLLABARY[text] == null) return "?";
+    return SYLLABARY[text];
+}
 // Converts the given text to its shmigan representation, to be rendered in the
 // shmigan font.
 function toShmigan(text) {
@@ -60,20 +65,22 @@ function toShmigan(text) {
     var outstring = "";
     var syllable = "";
     while (i < text.length) {
-        syllable = "";
-        if (PUNCT[text.charAt(i)] == null) {
-            while (VOWELS[text.charAt(i)] == null) {
-                if (i >= text.length) return outstring;
-                syllable += text.charAt(i);
-                i++;
+        if (PUNCT[text.charAt(i)] != null) {
+            outstring = outstring.concat( syllOf(syllable) + PUNCT[text.charAt(i)] );
+            syllable = "";
+        } else if (text.charAt(i).toLowerCase() != text.charAt(i).toUpperCase() || text.charAt(i) == "'") {
+            if (VOWELS[text.charAt(i).toLowerCase()] == null) {
+                syllable = syllable.concat(text.charAt(i).toLowerCase());
+            } else {
+                outstring = outstring.concat( VOWELS[text.charAt(i).toLowerCase()] + syllOf(syllable) );
+                syllable = "";
             }
-            outstring = outstring + VOWELS[text.charAt(i)] + SYLLABARY[syllable];
         } else {
-            outstring = outstring + PUNCT[text.charAt(i)];
+            outstring = outstring.concat(text.charAt(i));
         }
-
         i++;
     }
+    if (syllable.length > 0) outstring = outstring.concat(syllOf(syllable));
     return outstring;
 }
 
