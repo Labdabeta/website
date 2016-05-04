@@ -106,7 +106,7 @@ textarea {
 
 #botbar {
     position:fixed;
-    bottom:11px; /* Changed later in js */
+    bottom:3%; /* Changed later in js */
     left:0px;
     width:100%;
 }
@@ -233,7 +233,7 @@ body {
 }
 
 html {
-    height: 98%; /* Leaves a little space at the end for the copyright notice */
+    height: 97%; /* Leaves a little space at the end for the copyright notice */
 }
 
 .pagewrapper {
@@ -243,23 +243,26 @@ html {
 .footer {
     position: relative;
     background-color: black;
-    height: 11px; /* Determined experimentally. */
+    height: 3%; /* Determined experimentally. */
 }
 
 .copyright {
     position: relative;
+    height: 100%;
     float: right;
-    font-size: 8px;
+    font-size: 12px;
     background-color: black;
     color: white;
+    vertical-align: middle;
 }
 
 .contact {
     position: relative;
     float: left;
-    font-size: 8px;
+    font-size: 12px;
     background-color: black;
     color: white;
+    vertical-align: middle;
 }
 
 /* ==========================================================================
