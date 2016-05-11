@@ -1,36 +1,56 @@
 // The shmigan syllabary, maps syllables to symbols in shmigan.
 var SYLLABARY = [];
 SYLLABARY[ "" ] = "";
+//Simples
 SYLLABARY[ "t" ] = "/^";
-SYLLABARY[ "d" ] = "\\^";
-SYLLABARY[ "m" ] = "\\/^";
-SYLLABARY[ "p" ] = ")/^";
-SYLLABARY[ "b" ] = "(\\^";
-SYLLABARY[ "n" ] = "()\\/^";
-SYLLABARY[ "k" ] = "]/^";
-SYLLABARY[ "g" ] = "[\\^";
-SYLLABARY[ "h" ] = "[]\\/^";
-SYLLABARY[ "f" ] = "/~";
-SYLLABARY[ "v" ] = "\\~";
-SYLLABARY[ "l" ] = "\\/~";
-SYLLABARY[ "th" ] = ")/~";
-SYLLABARY[ "ch" ] = "(\\~";
-SYLLABARY[ "r" ] = "()\\/~";
-SYLLABARY[ "sh" ] = "]/~";
-SYLLABARY[ "zh" ] = "[\\~";
-SYLLABARY[ "w" ] = "[]\\/~";
-SYLLABARY[ "st" ] = "/*";
-SYLLABARY[ "sp" ] = "\\*";
-SYLLABARY[ "sk" ] = "\\/*";
-SYLLABARY[ "sl" ] = ")/*";
-SYLLABARY[ "sm" ] = "(\\*";
-SYLLABARY[ "sn" ] = "()\\/*";
-SYLLABARY[ "ssh" ] = "]/*";
-SYLLABARY[ "sth" ] = "[\\*";
-SYLLABARY[ "sw" ] = "[]\\/*";
-SYLLABARY[ "y" ] = "^";
-SYLLABARY[ "x" ] = "~";
-SYLLABARY[ "s" ] = "*";
+SYLLABARY[ "k" ] = "\\^";
+SYLLABARY[ "h" ] = "\\/^"; // Usually pronounced as glottal stop, not fricative
+SYLLABARY[ "th"] = "/)^";
+SYLLABARY[ "sh"] = "\\(^";
+SYLLABARY[ "x" ] = "\\/()^";
+SYLLABARY[ "r" ] = "/]^";
+SYLLABARY[ "l" ] = "\\[^";
+SYLLABARY[ "n" ] = "\\/[]^";
+//s-additions
+SYLLABARY[ "st"] = "/~";
+SYLLABARY[ "sk"] = "\\~";
+SYLLABARY[ "s" ] = "\\/~";
+SYLLABARY["sth"] = "/)~";
+SYLLABARY["ssh"] = "\\(~";
+SYLLABARY["sx" ] = "\\/()~";
+SYLLABARY["sl" ] = "/]~";
+SYLLABARY["sr" ] = "\\[~";
+SYLLABARY["sn" ] = "\\/[]~";
+//compounds
+SYLLABARY["str"] = "/*";
+SYLLABARY["skr"] = "\\*";
+SYLLABARY[ "z" ] = "\\/*"; // z is placeholder for dipthongization
+SYLLABARY["thr"] = "/)*";
+SYLLABARY["shr"] = "\\(*";
+SYLLABARY[ "xr"] = "\\/()*";
+SYLLABARY["thl"] = "/]*";
+SYLLABARY["shl"] = "\\[*";
+SYLLABARY[ "xl"] = "\\/[]*";
+//s-addition codas
+SYLLABARY[ "ts"] = "/~";
+SYLLABARY[ "ks"] = "\\~";
+SYLLABARY["ths"] = "/)~";
+SYLLABARY["shs"] = "\\(~";
+SYLLABARY["xs" ] = "\\/()~";
+SYLLABARY["ls" ] = "/]~";
+SYLLABARY["rs" ] = "\\[~";
+SYLLABARY["ns" ] = "\\/[]~";
+//compound codas
+SYLLABARY["rts"] = "/*";
+SYLLABARY["rks"] = "\\*";
+SYLLABARY[ "ch"] = "\\/*"; 
+SYLLABARY["rth"] = "/)*";
+SYLLABARY["rsh"] = "\\(*";
+SYLLABARY[ "rx"] = "\\/()*";
+SYLLABARY["lth"] = "/]*";
+SYLLABARY["lsh"] = "\\[*";
+SYLLABARY[ "lx"] = "\\/[]*";
+
 
 // The 'vowels' recognized by shmigan
 var VOWELS = [];
