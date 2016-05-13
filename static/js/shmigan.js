@@ -4,7 +4,7 @@ SYLLABARY[ "" ] = "";
 //Simples
 SYLLABARY[ "t" ] = "/^";
 SYLLABARY[ "k" ] = "\\^";
-SYLLABARY[ "h" ] = "\\/^"; // Usually pronounced as glottal stop, not fricative
+SYLLABARY[ "q" ] = "\\/^"; // glottal stop, no character in english
 SYLLABARY[ "th"] = "/)^";
 SYLLABARY[ "sh"] = "\\(^";
 SYLLABARY[ "x" ] = "\\/()^";
@@ -24,7 +24,7 @@ SYLLABARY["sn" ] = "\\/[]~";
 //compounds
 SYLLABARY["str"] = "/*";
 SYLLABARY["skr"] = "\\*";
-SYLLABARY[ "z" ] = "\\/*"; // z is placeholder for dipthongization
+SYLLABARY[ "h" ] = "\\/*"; 
 SYLLABARY["thr"] = "/)*";
 SYLLABARY["shr"] = "\\(*";
 SYLLABARY[ "xr"] = "\\/()*";
