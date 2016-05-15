@@ -1,6 +1,68 @@
+@font-face {
+    font-family: JosefinSlab;
+    src: url("/ttf/JosefinSlab-Regular.ttf");
+}
+
+@font-face {
+    font-family: JosefinSans;
+    src: url("/ttf/JosefinSans-Regular.ttf");
+}
+
 #container div {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 10px;
+}
+
+h3 {
+    font-family: JosefinSlab;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-family: JosefinSlab;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+#sidebar div {
+    font-family: JosefinSans;
+}
+
+#sidebar {
+    text-align: right;
+}
+
+#mainbody div {
+    font-family: JosefinSans;
+}
+
+#mainbody li {
+    font-family: JosefinSans;
+}
+
+#mainbody hr {
+    margin: 0;
+}
+
+table {
+    border: 1px solid black;
+}
+
+td, th {
+    font-family: JosefinSans;
+    text-align: center;
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.datespace {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+ul {
+    margin: 0;
 }
