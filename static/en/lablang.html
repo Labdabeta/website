@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/lablang.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -19,310 +20,312 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="pagewrapper">
-            <div id="topbar" class="menubar">
-                <ul>
-                    <li class="item"><b>Quick Links: </b></li>
-                    <li class="item"><a href="/en/index.html">Home</a></li>
-                    <li class="item"><a href="/en/resume.html">Résumé</a></li>
+        <div class="pagewrapperwrapper">
+            <div class="pagewrapper">
+                <div id="topbar" class="menubar">
+                    <ul>
+                        <li class="item"><b>Quick Links: </b></li>
+                        <li class="item"><a href="/en/index.html">Home</a></li>
+                        <li class="item"><a href="/en/resume.html">Résumé</a></li>
 
-                    <li class="option"><a href="/fr/lablang.html">Français</a></li>
-                    <li class="option"><a href="/eo/lablang.html">Esperanton</a></li>
-                    <li class="option"><b>Change Language:</b></li>
-                </ul>
+                        <li class="option"><a href="/fr/lablang.html">Français</a></li>
+                        <li class="option"><a href="/eo/lablang.html">Esperanton</a></li>
+                        <li class="option"><b>Change Language:</b></li>
+                    </ul>
+                </div>
+
+                <div id="menuskip"></div>
+                
+                <h1>LAB Specifications</h1>
+
+                <h2>Registers</h2>
+                <p>LAB has 256 registers. While the size of these registers is specific to
+                implementation, they must be capable of storing at least 28 bits of
+                information in order to encode all possible instructions. Standard encoding
+                of instructions requires at least 32 bits and a binary encoding.</p> <p>Most
+                of these registers are general-purpose, however certain specific registers
+                are reserved for special use. The 0 register will always store the value 0
+                and is read only. Any attempt to write to the 0 register will have no
+                effect. The last register is the program counter. While it can be accessed
+                directly, it typically should not be. The second-last register is the
+                immediate offset register. When encountered by the CPU it will load the next
+                cell in memory as the register's value and write back to it if necessary
+                incrementing the program counter as necessary. To facilitate this the CPU
+                will load at least the next 4 cells of memory for each instruction. Any
+                register may be locked by the operating system using I/O instructions
+                specific to implementation. The third-to-last (253rd xFD) is initialized to
+                the last accessible cell of memory.</p>
+
+                <h2>Instructions</h2>
+                <p>LAB runs on a heavily reduced instruction set containing only 16
+                instructions encoded across 4 bits. These instructions are organized as 4
+                sets of 4 related operations. The instructions are summarized in the
+                following table:</p>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Arithmetic (0)</th>
+                        <th>Logic (1)</th>
+                        <th>Code (2)</th>
+                        <th>I/O (3)</th>
+                    </tr>
+                    <tr>
+                        <th>0</th>
+                        <td>ADD</td>
+                        <td>AND</td>
+                        <td>XOR</td>
+                        <td>LDR</td>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <td>SUB</td>
+                        <td>NAN</td>
+                        <td>MOD</td>
+                        <td>STR</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>MUL</td>
+                        <td>ORR</td>
+                        <td>BGT</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>DIV</td>
+                        <td>NOR</td>
+                        <td>BEQ</td>
+                        <td>PUT</td>
+                    </tr>
+                </table>
+
+                <p>What follows is a more detailed description of each instruction.</p>
+                <table>
+                    <tr>
+                        <th width="8%">Encoding</th>
+                        <th width="12%">Name</th>
+                        <th width="12%">Mnemonic</th>
+                        <th width="66%">Description</th>
+                        <th width="2%">Time</th>
+                    </tr>
+                    <tr>
+                        <td>00AABBCC</td>
+                        <td>Add</td>
+                        <td>ADD RA RB RC</td>
+                        <td>Adds RA and RB, storing the result in RC.</td> 
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>01AABBCC</td>
+                        <td>Subtract</td>
+                        <td>SUB RA RB RC</td>
+                        <td>Subtracts RB from RA, storing the result in RC.</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>02AABBCC</td>
+                        <td>Multiply</td>
+                        <td>MUL RA RB RC</td>
+                        <td>Multiplies RA and RB, storing the result in RC.</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>03AABBCC</td>
+                        <td>Divide</td>
+                        <td>DIV RA RB RC</td>
+                        <td>Divides RA by RB, storing the result in RC.</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>04AABBCC</td>
+                        <td>And</td>
+                        <td>AND RA RB RC</td>
+                        <td>Calculates the bitwise AND of RA and RB, storing the result in
+                            RC.</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>05AABBCC</td>
+                        <td>Not And</td>
+                        <td>NAN RA RB RC</td>
+                        <td>Calculates the bitwise NAND of RA and RB, storing the result in
+                            RC.</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>06AABBCC</td>
+                        <td>Or</td>
+                        <td>ORR RA RB RC</td>
+                        <td>Calculates the bitwise OR of RA and RB, storing the result in
+                            RC.</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>07AABBCC</td>
+                        <td>Not Or</td>
+                        <td>NOR RA RB RC</td>
+                        <td>Calculates the bitwise NOR of RA and RB, storing the result in
+                            RC.</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>08AABBCC</td>
+                        <td>Exclusive Or</td>
+                        <td>XOR RA RB RC</td>
+                        <td>Calculates the bitwise XOR of RA and RB, storing the result in
+                            RC.</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>09AABBCC</td>
+                        <td>Modulus</td>
+                        <td>MOD RA RB RC</td>
+                        <td>Calculates the modulus<sup>&dagger;</sup> (remainder) of RA
+                            divided by RB.</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>0AAABBCC</td>
+                        <td>Branch if &gt;</td>
+                        <td>BGT RA RB RC</td>
+                        <td>Jumps to the location in RC if RA is greater than RB.</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>0BAABBCC</td>
+                        <td>Branch if =</td>
+                        <td>BEQ RA RB RC</td>
+                        <td>Jumps to the location in RC if RA is equal to RB.</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>0CAABBCC</td>
+                        <td>Load Register</td>
+                        <td>LDR RA RB RC</td>
+                        <td>Loads the value stored in memory at the location specified by
+                            the sum of RA and RB into RC.</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>0DAABBCC</td>
+                        <td>Store Register</td>
+                        <td>STR RA RB RC</td>
+                        <td>Stores the value in RC to the memory location specified by the
+                            sum of RA and RB.</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>0EAABBCC</td>
+                        <td>Get Value</td>
+                        <td>GET RA RB RC</td>
+                        <td>Begins an input interrupt with the given value.</td>
+                        <td>0<sup>*</sup></td>
+                    </tr>
+                    <tr>
+                        <td>0FAABBCC</td>
+                        <td>Put Value</td>
+                        <td>PUT RA RB RC</td>
+                        <td>Begins an output interrupt with the given value.</td>
+                        <td>0<sup>*</sup></td>
+                    </tr>
+                </table>
+                <sup>&dagger;</sup>The behaviour of modulus on negative inputs is
+                specific to implementation.<br>
+                <sup>*</sup>Get and Put instructions block the process to call the
+                operating system. However the operating system may use particular calls
+                which have execution times specific to implementation.
+
+                <p>The first nibble determines how much to shift the C register right by after
+                execution (at no extra time cost). The first byte indicates the units of the
+                shift, with 1 indicating byte-wise and 0 indicating bit-wise. The remaining
+                three bytes are 2's complement encoded shift amounts to be applied.</p>
+                <hr>
+
+                <h2>I/O Implementation</h2>
+                <p>The implementation with which this specification comes handles the get
+                and put operations in the following way. Note that in these tables the
+                equivalent c code assumes that a,b, and c are mutable pointers to their
+                respective register values. </p>
+
+                <p>Note that these instructions are, in general, too high-level for
+                non-emulated environments. Therefore this implementation is not necessarily
+                recommended for embedded use. It is intended for instructional use in
+                emulated environments.</p>
+
+                <h3>Put</h3>
+                <table>
+                    <tr>
+                        <th>A</th>
+                        <th>Equivalent C</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>if (!*b) exit(*c);</td>
+                        <td>If b is zero, exits with status c.</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>if (!*b) if (!*c) printf("0"); else printf("%c",*c); else
+                            printf("%d",*b);</td>
+                        <td>Prints b to output as an integer if it is non-zero, otherwise
+                            prints c as an ascii character. If c is also zero, prints 0.</td>
+                    </tr>   
+                    <tr>
+                        <td>2</td>
+                        <td>printf("%'B's", mem[*c]);</td>
+                        <td>Prints at most B characters from the null terminated string
+                            starting at c.</td>
+                    </tr>
+                </table>
+
+                <h3>Get</h3>
+                <table>
+                    <tr>
+                        <th>A</th>
+                        <th>Equivalent C</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>*c = time(NULL)-*b;</td>
+                        <td>Loads the difference between the current time, and that in b
+                            into c.</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>if (!*b) scanf("%d",c); else scanf("%c",c);</td>
+                        <td>If b is nonzero loads a character from standard input into c,
+                            otherwise loads an integer from standard input into c.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>scanf("%Bs",mem[c]);</td>
+                        <td>Loads at most B characters from standard input into memory
+                            starting at c as a null terminated string.</td>
+                    </tr>
+                </table>
+
+                <p>The BNF of the grammar of a valid LAB assembly program may be described
+                as:</p>
+                <pre><code>PROGRAM ::= MEMORY | MEMORY WS PROGRAM
+MEMORY ::= OPT_WS LABEL* OPT_WS DATA OPT_WS COMMENT?
+LABEL ::= IDENTIFIER OPT_WS ":"
+DATA ::= INTEGER | STRING | INSTRUCTION
+INTEGER ::= OCTAL | HEXADECIMAL | DECIMAL | IDENTIFIER
+STRING ::= '"' (ASCII | '\' '"')* '"'
+INSTRUCTION ::= INSTRUCTION_NAME WS REGISTER WS REGISTER WS REGISTER
+REGISTER ::= (("r" | "R") DECIMAL | ("x" | "X") HEXDIGIT+ | ("o" | "O") OCTAL_DIGIT+ | INTEGER | IDENTIFIER) NON_WS*
+
+OCTAL ::= "0" OCTAL_DIGIT*
+HEXADECIMAL ::= "0" "x" HEX_DIGIT+
+DECIMAL ::= NONZERO_DIGIT DIGIT*</code></pre>
+
+                <h2>Repository/Download</h2>
+                <p>You can see the repository (and clone it/download it/etc) at: 
+                <a href="https://bitbucket.org/Lambdabeta/lab-assembly/">
+                    bitbucket.org/Lambdabeta/lab-assembly</a>
             </div>
-
-            <div id="menuskip"></div>
-            
-            <h1>LAB Specifications</h1>
-
-            <h2>Registers</h2>
-            <p>LAB has 256 registers. While the size of these registers is specific to
-            implementation, they must be capable of storing at least 28 bits of
-            information in order to encode all possible instructions. Standard encoding
-            of instructions requires at least 32 bits and a binary encoding.</p> <p>Most
-            of these registers are general-purpose, however certain specific registers
-            are reserved for special use. The 0 register will always store the value 0
-            and is read only. Any attempt to write to the 0 register will have no
-            effect. The last register is the program counter. While it can be accessed
-            directly, it typically should not be. The second-last register is the
-            immediate offset register. When encountered by the CPU it will load the next
-            cell in memory as the register's value and write back to it if necessary
-            incrementing the program counter as necessary. To facilitate this the CPU
-            will load at least the next 4 cells of memory for each instruction. Any
-            register may be locked by the operating system using I/O instructions
-            specific to implementation. The third-to-last (253rd xFD) is initialized to
-            the last accessible cell of memory.</p>
-
-            <h2>Instructions</h2>
-            <p>LAB runs on a heavily reduced instruction set containing only 16
-            instructions encoded across 4 bits. These instructions are organized as 4
-            sets of 4 related operations. The instructions are summarized in the
-            following table:</p>
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Arithmetic (0)</th>
-                    <th>Logic (1)</th>
-                    <th>Code (2)</th>
-                    <th>I/O (3)</th>
-                </tr>
-                <tr>
-                    <th>0</th>
-                    <td>ADD</td>
-                    <td>AND</td>
-                    <td>XOR</td>
-                    <td>LDR</td>
-                </tr>
-                <tr>
-                    <th>1</th>
-                    <td>SUB</td>
-                    <td>NAN</td>
-                    <td>MOD</td>
-                    <td>STR</td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td>MUL</td>
-                    <td>ORR</td>
-                    <td>BGT</td>
-                    <td>GET</td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td>DIV</td>
-                    <td>NOR</td>
-                    <td>BEQ</td>
-                    <td>PUT</td>
-                </tr>
-            </table>
-
-            <p>What follows is a more detailed description of each instruction.</p>
-            <table>
-                <tr>
-                    <th width="8%">Encoding</th>
-                    <th width="12%">Name</th>
-                    <th width="12%">Mnemonic</th>
-                    <th width="66%">Description</th>
-                    <th width="2%">Time</th>
-                </tr>
-                <tr>
-                    <td>00AABBCC</td>
-                    <td>Add</td>
-                    <td>ADD RA RB RC</td>
-                    <td>Adds RA and RB, storing the result in RC.</td> 
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>01AABBCC</td>
-                    <td>Subtract</td>
-                    <td>SUB RA RB RC</td>
-                    <td>Subtracts RB from RA, storing the result in RC.</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>02AABBCC</td>
-                    <td>Multiply</td>
-                    <td>MUL RA RB RC</td>
-                    <td>Multiplies RA and RB, storing the result in RC.</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>03AABBCC</td>
-                    <td>Divide</td>
-                    <td>DIV RA RB RC</td>
-                    <td>Divides RA by RB, storing the result in RC.</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>04AABBCC</td>
-                    <td>And</td>
-                    <td>AND RA RB RC</td>
-                    <td>Calculates the bitwise AND of RA and RB, storing the result in
-                        RC.</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>05AABBCC</td>
-                    <td>Not And</td>
-                    <td>NAN RA RB RC</td>
-                    <td>Calculates the bitwise NAND of RA and RB, storing the result in
-                        RC.</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>06AABBCC</td>
-                    <td>Or</td>
-                    <td>ORR RA RB RC</td>
-                    <td>Calculates the bitwise OR of RA and RB, storing the result in
-                        RC.</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>07AABBCC</td>
-                    <td>Not Or</td>
-                    <td>NOR RA RB RC</td>
-                    <td>Calculates the bitwise NOR of RA and RB, storing the result in
-                        RC.</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>08AABBCC</td>
-                    <td>Exclusive Or</td>
-                    <td>XOR RA RB RC</td>
-                    <td>Calculates the bitwise XOR of RA and RB, storing the result in
-                        RC.</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>09AABBCC</td>
-                    <td>Modulus</td>
-                    <td>MOD RA RB RC</td>
-                    <td>Calculates the modulus<sup>&dagger;</sup> (remainder) of RA
-                        divided by RB.</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>0AAABBCC</td>
-                    <td>Branch if &gt;</td>
-                    <td>BGT RA RB RC</td>
-                    <td>Jumps to the location in RC if RA is greater than RB.</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>0BAABBCC</td>
-                    <td>Branch if =</td>
-                    <td>BEQ RA RB RC</td>
-                    <td>Jumps to the location in RC if RA is equal to RB.</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>0CAABBCC</td>
-                    <td>Load Register</td>
-                    <td>LDR RA RB RC</td>
-                    <td>Loads the value stored in memory at the location specified by
-                        the sum of RA and RB into RC.</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>0DAABBCC</td>
-                    <td>Store Register</td>
-                    <td>STR RA RB RC</td>
-                    <td>Stores the value in RC to the memory location specified by the
-                        sum of RA and RB.</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>0EAABBCC</td>
-                    <td>Get Value</td>
-                    <td>GET RA RB RC</td>
-                    <td>Begins an input interrupt with the given value.</td>
-                    <td>0<sup>*</sup></td>
-                </tr>
-                <tr>
-                    <td>0FAABBCC</td>
-                    <td>Put Value</td>
-                    <td>PUT RA RB RC</td>
-                    <td>Begins an output interrupt with the given value.</td>
-                    <td>0<sup>*</sup></td>
-                </tr>
-            </table>
-            <sup>&dagger;</sup>The behaviour of modulus on negative inputs is
-            specific to implementation.<br>
-            <sup>*</sup>Get and Put instructions block the process to call the
-            operating system. However the operating system may use particular calls
-            which have execution times specific to implementation.
-
-            <p>The first nibble determines how much to shift the C register right by after
-            execution (at no extra time cost). The first byte indicates the units of the
-            shift, with 1 indicating byte-wise and 0 indicating bit-wise. The remaining
-            three bytes are 2's complement encoded shift amounts to be applied.</p>
-            <hr>
-
-            <h2>I/O Implementation</h2>
-            <p>The implementation with which this specification comes handles the get
-            and put operations in the following way. Note that in these tables the
-            equivalent c code assumes that a,b, and c are mutable pointers to their
-            respective register values. </p>
-
-            <p>Note that these instructions are, in general, too high-level for
-            non-emulated environments. Therefore this implementation is not necessarily
-            recommended for embedded use. It is intended for instructional use in
-            emulated environments.</p>
-
-            <h3>Put</h3>
-            <table>
-                <tr>
-                    <th>A</th>
-                    <th>Equivalent C</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>if (!*b) exit(*c);</td>
-                    <td>If b is zero, exits with status c.</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>if (!*b) if (!*c) printf("0"); else printf("%c",*c); else
-                        printf("%d",*b);</td>
-                    <td>Prints b to output as an integer if it is non-zero, otherwise
-                        prints c as an ascii character. If c is also zero, prints 0.</td>
-                </tr>   
-                <tr>
-                    <td>2</td>
-                    <td>printf("%'B's", mem[*c]);</td>
-                    <td>Prints at most B characters from the null terminated string
-                        starting at c.</td>
-                </tr>
-            </table>
-
-            <h3>Get</h3>
-            <table>
-                <tr>
-                    <th>A</th>
-                    <th>Equivalent C</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>*c = time(NULL)-*b;</td>
-                    <td>Loads the difference between the current time, and that in b
-                        into c.</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>if (!*b) scanf("%d",c); else scanf("%c",c);</td>
-                    <td>If b is nonzero loads a character from standard input into c,
-                        otherwise loads an integer from standard input into c.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>scanf("%Bs",mem[c]);</td>
-                    <td>Loads at most B characters from standard input into memory
-                        starting at c as a null terminated string.</td>
-                </tr>
-            </table>
-
-            <p>The BNF of the grammar of a valid LAB assembly program may be described
-            as:</p>
-            <pre><code>PROGRAM ::= MEMORY | MEMORY WS PROGRAM
-    MEMORY ::= OPT_WS LABEL* OPT_WS DATA OPT_WS COMMENT?
-    LABEL ::= IDENTIFIER OPT_WS ":"
-    DATA ::= INTEGER | STRING | INSTRUCTION
-    INTEGER ::= OCTAL | HEXADECIMAL | DECIMAL | IDENTIFIER
-    STRING ::= '"' (ASCII | '\' '"')* '"'
-    INSTRUCTION ::= INSTRUCTION_NAME WS REGISTER WS REGISTER WS REGISTER
-    REGISTER ::= (("r" | "R") DECIMAL | ("x" | "X") HEXDIGIT+ | ("o" | "O") OCTAL_DIGIT+ | INTEGER | IDENTIFIER) NON_WS*
-
-    OCTAL ::= "0" OCTAL_DIGIT*
-    HEXADECIMAL ::= "0" "x" HEX_DIGIT+
-    DECIMAL ::= NONZERO_DIGIT DIGIT*</code></pre>
-
-            <h2>Repository/Download</h2>
-            <p>You can see the repository (and clone it/download it/etc) at: 
-            <a href="https://bitbucket.org/Lambdabeta/lab-assembly/">
-                bitbucket.org/Lambdabeta/lab-assembly</a>
         </div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
