@@ -18,8 +18,8 @@ SYLLABARY[ "s" ] = "\\/~";
 SYLLABARY["sth"] = "/)~";
 SYLLABARY["ssh"] = "\\(~";
 SYLLABARY["sx" ] = "\\/()~";
-SYLLABARY["sl" ] = "/]~";
-SYLLABARY["sr" ] = "\\[~";
+SYLLABARY["sr" ] = "/]~";
+SYLLABARY["sl" ] = "\\[~";
 SYLLABARY["sn" ] = "\\/[]~";
 //compounds
 SYLLABARY["str"] = "/*";
