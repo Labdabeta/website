@@ -2,9 +2,23 @@
     font-family: Shmigan;
     src: url("/ttf/Shmigan.ttf");
 }
-.shmigan {
+.shmigan span.real_shmigan {
     font-family: Shmigan;
     font-size: 28pt;
+}
+
+.shmigan span.ipa {
+    display: none;
+}
+
+.shmigan:hover span.real_shmigan {
+    display: none;
+}
+
+.shmigan:hover span.ipa {
+    font-family: normal;
+    font-size: 28pt;
+    display: inline;
 }
 
 table {
@@ -15,3 +29,6 @@ table, td, th {
     border: 1px solid black;
 }
     
+th.shmigan {
+    font-weight: normal;
+}

@@ -4,7 +4,7 @@ SYLLABARY[ "" ] = "";
 //Simples
 SYLLABARY[ "t" ] = "/^";
 SYLLABARY[ "k" ] = "\\^";
-SYLLABARY[ "q" ] = "\\/^"; // glottal stop, no character in english
+SYLLABARY[ "p" ] = "\\/^";
 SYLLABARY[ "th"] = "/)^";
 SYLLABARY[ "sh"] = "\\(^";
 SYLLABARY[ "x" ] = "\\/()^";
@@ -14,42 +14,44 @@ SYLLABARY[ "n" ] = "\\/[]^";
 //s-additions
 SYLLABARY[ "st"] = "/~";
 SYLLABARY[ "sk"] = "\\~";
-SYLLABARY[ "s" ] = "\\/~";
-SYLLABARY["sth"] = "/)~";
-SYLLABARY["ssh"] = "\\(~";
-SYLLABARY["sx" ] = "\\/()~";
-SYLLABARY["sr" ] = "/]~";
-SYLLABARY["sl" ] = "\\[~";
-SYLLABARY["sn" ] = "\\/[]~";
+SYLLABARY[ "sp" ] = "\\/~";
+SYLLABARY[ "sth"] = "/)~";
+SYLLABARY[ "ssh"] = "\\(~";
+SYLLABARY[ "sx" ] = "\\/()~";
+SYLLABARY[ "sr" ] = "/]~";
+SYLLABARY[ "sl" ] = "\\[~";
+SYLLABARY[ "sn" ] = "\\/[]~";
 //compounds
-SYLLABARY["str"] = "/*";
-SYLLABARY["skr"] = "\\*";
-SYLLABARY[ "h" ] = "\\/*"; 
-SYLLABARY["thr"] = "/)*";
-SYLLABARY["shr"] = "\\(*";
-SYLLABARY[ "xr"] = "\\/()*";
-SYLLABARY["thl"] = "/]*";
-SYLLABARY["shl"] = "\\[*";
+SYLLABARY[ "str"] = "/*";
+SYLLABARY[ "skr"] = "\\*";
+SYLLABARY[ "spr"] = "\\/*";
+SYLLABARY[ "thr"] = "/)*";
+SYLLABARY[ "shr"] = "\\(*";
+SYLLABARY[  "xr"] = "\\/()*";
+SYLLABARY[ "thl"] = "/]*";
+SYLLABARY[ "shl"] = "\\[*";
 SYLLABARY[ "xl"] = "\\/[]*";
 //s-addition codas
 SYLLABARY[ "ts"] = "/~";
 SYLLABARY[ "ks"] = "\\~";
-SYLLABARY["ths"] = "/)~";
-SYLLABARY["shs"] = "\\(~";
-SYLLABARY["xs" ] = "\\/()~";
-SYLLABARY["ls" ] = "/]~";
-SYLLABARY["rs" ] = "\\[~";
-SYLLABARY["ns" ] = "\\/[]~";
+SYLLABARY[ "ths"] = "/)~";
+SYLLABARY[ "shs"] = "\\(~";
+SYLLABARY[ "xs" ] = "\\/()~";
+SYLLABARY[ "ls" ] = "/]~";
+SYLLABARY[ "rs" ] = "\\[~";
+SYLLABARY[ "ns" ] = "\\/[]~";
 //compound codas
-SYLLABARY["rts"] = "/*";
-SYLLABARY["rks"] = "\\*";
-SYLLABARY[ "ch"] = "\\/*"; 
-SYLLABARY["rth"] = "/)*";
-SYLLABARY["rsh"] = "\\(*";
+SYLLABARY[ "rts"] = "/*";
+SYLLABARY[ "rks"] = "\\*";
+SYLLABARY[ "rps"] = "\\/*";
+SYLLABARY[ "rth"] = "/)*";
+SYLLABARY[ "rsh"] = "\\(*";
 SYLLABARY[ "rx"] = "\\/()*";
-SYLLABARY["lth"] = "/]*";
-SYLLABARY["lsh"] = "\\[*";
+SYLLABARY[ "lth"] = "/]*";
+SYLLABARY[ "lsh"] = "\\[*";
 SYLLABARY[ "lx"] = "\\/[]*";
+//special case 's'
+SYLLABARY[ "s" ] = "*";
 
 
 // The 'vowels' recognized by shmigan
@@ -104,7 +106,19 @@ function toShmigan(text) {
     return outstring;
 }
 
+function toIPA(text) {
+    return text.replace(new RegExp("sh", 'g'),"&#643;")
+               .replace(new RegExp("th", 'g'),"&theta;")
+               .replace(new RegExp("'", 'g')," ")
+               .replace(new RegExp("r", 'g'),"&#633;");
+}
+
+
+
 //Render all shmigan classes in proper shmigan.
 $(".shmigan").each(function(index){
-    $(this).text(toShmigan($(this).text()));
+    var txt = $(this).text();
+    $(this).text("");
+    $(this).append("<span class=\"ipa\">" + toIPA(txt) + "</span>");
+    $(this).append("<span class=\"real_shmigan\">" + toShmigan(txt) + "</span>");
 });
