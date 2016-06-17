@@ -110,7 +110,9 @@ function toIPA(text) {
     return text.replace(new RegExp("sh", 'g'),"&#643;")
                .replace(new RegExp("th", 'g'),"&theta;")
                .replace(new RegExp("'", 'g')," ")
-               .replace(new RegExp("r", 'g'),"&#633;");
+               .replace(new RegExp("r", 'g'),"&#633;")
+               .replace(new RegExp("<", 'g'),"\"")
+               .replace(new RegExp(">", 'g'),"\"");
 }
 
 
