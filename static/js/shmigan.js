@@ -34,6 +34,7 @@ SYLLABARY[ "xl"] = "\\/[]*";
 //s-addition codas
 SYLLABARY[ "ts"] = "/~";
 SYLLABARY[ "ks"] = "\\~";
+SYLLABARY[ "ps"] = "\\/~";
 SYLLABARY[ "ths"] = "/)~";
 SYLLABARY[ "shs"] = "\\(~";
 SYLLABARY[ "xs" ] = "\\/()~";
@@ -115,12 +116,24 @@ function toIPA(text) {
                .replace(new RegExp(">", 'g'),"\"");
 }
 
+function toGolden(text) {
+    /* TODO: Implement golden pronounciation:
+Alternative, vowel-consonant swapped pronounciation.
 
+Consonants: w j h l ʔ
+Vowels:
+ FRONTS   BACKS   CROSSES
+i  e  a  u  o  ɒ  iu eu au
+ie ei ai uo ou ɒu io eo ao
+ia ea ae uɒ oɒ ɒo iɒ eɒ aɒ */
+    return "";
+}
 
 //Render all shmigan classes in proper shmigan.
 $(".shmigan").each(function(index){
     var txt = $(this).text();
     $(this).text("");
     $(this).append("<span class=\"ipa\">" + toIPA(txt) + "</span>");
+    $(this).append("<span class=\"golden\">" + toGolden(txt) + "</span>");
     $(this).append("<span class=\"real_shmigan\">" + toShmigan(txt) + "</span>");
 });
